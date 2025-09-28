@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Sky Full of Wishes for Priyankaaaa💫</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(ellipse at center, #1a237e 0%, #0d1421 50%, #000051 100%);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .glass-card {
+            background: rgba(10, 5, 40, 0.5);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            z-index: 10;
+            animation: fadeInMessage 1.5s ease-out forwards;
+        }
+
+        @keyframes fadeInMessage {
+            from { opacity: 0; transform: translateY(20px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            line-height: 1.2;
+        }
+
+        .priyanka-gradient {
+            background: linear-gradient(90deg, #ff6ec4, #7873f5, #a2facf, #65C7F7, #ff6ec4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: colorChange 8s ease-in-out infinite;
+            background-size: 200% auto;
+            display: inline-block;
+        }
+
+        @keyframes colorChange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .wish-text {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.7;
+            color: #e8eaf6; 
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .confetti-btn {
+            background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(233, 64, 87, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .confetti-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(233, 64, 87, 0.6);
+        }
+
+        .confetti-btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(233, 64, 87, 0.3);
+        }
+
+        .lantern {
+            position: absolute; bottom: -120px; width: 40px; height: 60px; border-radius: 15px;
+            animation: floatUp 12s linear infinite; box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); filter: blur(0.5px);
+        }
+        .lantern::before, .lantern::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); }
+        .lantern::before { top: -8px; width: 20px; height: 8px; background: rgba(139, 69, 19, 0.8); border-radius: 4px; }
+        .lantern::after { bottom: -15px; width: 2px; height: 15px; background: rgba(139, 69, 19, 0.6); }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.7) rotate(-5deg); opacity: 0.7; }
+            10% { opacity: 1; } 90% { opacity: 1; }
+            100% { transform: translateY(-130vh) scale(1.3) rotate(5deg); opacity: 0; }
+        }
+
+        .confetti {
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+            animation: confetti-fall 4s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotateX(0) rotateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) translateX(var(--drift)) rotateX(720deg) rotateY(1080deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container" id="stars-container"></div>
+
+    <div class="glass-card">
+        <h1 class="main-title">
+            Happy Birthday <span class="priyanka-gradient">Priyankaaaa💫✨</span>
+        </h1>
+        
+        <p class="wish-text">
+            May your year ahead be a tapestry woven with shimmering joysss, unexpected wondersss, and momentsss that elevate your spirit like lanternsss dancing towards the starsss. Embrace the magic within uuuu.
+        </p>
+
+        <button class="confetti-btn" onclick="triggerConfetti()">
+            Unfold the Magiccc 🎉
+        </button>
+    </div>
+
+    <audio id="birthdayMusic" src="./thodi der.m4a" loop preload="auto"></audio>
+
+    <script>
+        const starsContainer = document.getElementById('stars-container');
+        const starColors = ['#FFFFFF', '#FFD700', '#00FFFF', '#FF00FF', '#7FFF00', '#FFA500'];
+
+        function createStars() {
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const color = starColors[Math.floor(Math.random() * starColors.length)];
+                
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.background = color;
+                star.style.boxShadow = `0 0 10px 2px ${color}80`; 
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 3) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        const lanternColors = [
+            "linear-gradient(135deg, #FF5F6D, #FFC371)", "linear-gradient(135deg, #f093fb, #f5576c)",
+            "linear-gradient(135deg, #4facfe, #00f2fe)", "linear-gradient(135deg, #fa709a, #fee140)",
+            "linear-gradient(135deg, #81FBB8, #28C76F)", "linear-gradient(135deg, #667eea, #764ba2)",
+            "linear-gradient(135deg, #ff7e5f, #feb47b)"
+        ];
+
+        function createLantern() {
+            const lantern = document.createElement('div');
+            lantern.classList.add('lantern');
+            lantern.style.left = Math.random() * (window.innerWidth - 40) + 'px';
+            lantern.style.background = lanternColors[Math.floor(Math.random() * lanternColors.length)];
+            lantern.style.animationDuration = (10 + Math.random() * 8) + 's';
+            lantern.style.animationDelay = Math.random() * 5 + 's';
+            
+            document.body.appendChild(lantern);
+            setTimeout(() => lantern.remove(), 20000);
+        }
+
+        const confettiColors = ['#ffcc00', '#ff0055', '#00ffaa', '#6a00ff', '#ffffff', '#00ccff', '#ff5733'];
+
+        function triggerConfetti() {
+            const music = document.getElementById('birthdayMusic');
+            if (music.paused) {
+                music.play().catch(e => console.error("Audio playback failed:", e));
+            }
+
+            for (let i = 0; i < 150; i++) { 
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+
+                if (Math.random() > 0.5) {
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.borderRadius = '50%';
+                } else {
+                    confetti.style.width = '6px';
+                    confetti.style.height = '12px';
+                    confetti.style.borderRadius = '2px';
+                }
+
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = -20 + 'px'; 
+                confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                
+                confetti.style.animationDuration = (Math.random() * 2 + 3) + 's'; 
+                confetti.style.setProperty('--drift', (Math.random() - 0.5) * 200 + 'px'); 
+
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }
+        }
+        
+        createStars();
+        setInterval(createLantern, 1000);
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createLantern, i * 500);
+        }
+    </script>
+</body>
+</html>
